@@ -8,7 +8,7 @@ The goal of this project is to develop a data ingestion pipeline that fetches re
 
 ### Scope and Objectives:
 Data Source:  public weather API (OpenWeatherMap API).<br>
-Tools and Technologies: Python, Airflow, PostgreSQL, Docker, Pandas.<br>
+Tools and Technologies: Python, Airflow, PostgreSQL, Docker, Dbeaver, Pandas.<br>
 Objectives:
 Fetch real-time weather data at regular intervals.
 Store the data in a PostgreSQL database.
@@ -38,5 +38,12 @@ Login: airflow<br>
 Password: airflow<br>
 Port: 5432<br>
 #### Monitoring
-Monitor the pipeline to ensure its working successfuly. The data generated can be exported for cleaning and furthur analysis<br>
-the python code in 'retrieve_data.py' can be use to retrieve the stored data
+1.Monitor the pipeline to ensure its working successfuly. The data generated can be exported for cleaning and furthur analysis<br>
+2.Using data base management tools such as Dbeaver connect to airflow and view the data generated<br>
+using these connection properties:<br>
+Host: localhost (or the IP address of your PostgreSQL server if it is not on the same machine)
+Port: 5432
+Database: airflow (or the name of your PostgreSQL database)
+Username: airflow (or the PostgreSQL username you set)
+Password: airflow (or the PostgreSQL password you set)
+
