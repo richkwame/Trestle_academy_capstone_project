@@ -21,9 +21,9 @@ Set up a monitoring and error handling system with email notification to ensure 
 Data Ingestion:<br>
 3.using the command Docker-compose up, create a container using postgres and airflow image in Docker after saving the 'Docker-compose.yml' file<br>
 4.Ensure the container is running in docker, also check all logs to ensure there are no errors<br>
-5.Using http://localhost:8080 , access the airflow web user interface and use admin as username and password
-6.Ensure that 'weather_data_ingestion_retrieval' python file is located at the DAG portion in the airflow home page
-7. Using the code in 'retrieve_data' you can print or view the stored data in postgres
+5.Using http://localhost:8080 , access the airflow web user interface and use admin as username and password<br>
+6.Ensure that 'weather_data_ingestion_retrieval' python file is located at the DAG portion in the airflow home page<br>
+7. Using the code in 'retrieve_data' you can print or view the stored data in postgres<br>
 
 #### Data Storage:<br>
 Set up a PostgreSQL connection in Airflow:<br>
