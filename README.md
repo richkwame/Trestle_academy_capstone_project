@@ -17,12 +17,12 @@ Set up a monitoring and error handling system with email notification to ensure 
 ### Project Implementation:
 #### Data Source:<br>
 1.sign up at OpenweatherMap website for API key<br>
-2.test the API using code in 'Python_script' codes
+2.test the API using code in 'Python_script'<br>
 Data Ingestion:<br>
-1. using the command Docker-compose up, create a container using postgres and airflow image in Docker after saving the 'Docker-compose.yml' file<br>
-2.Ensure the container is running in docker, also check all logs to ensure there are no errors<br>
-3. Using http://localhost:8080 , access the airflow web user interface and use admin as username and password
-4. Ensure that 'weather_data_ingestion_retrieval' python file is located at the DAG portion in the airflow home page
+3.using the command Docker-compose up, create a container using postgres and airflow image in Docker after saving the 'Docker-compose.yml' file<br>
+4.Ensure the container is running in docker, also check all logs to ensure there are no errors<br>
+5.Using http://localhost:8080 , access the airflow web user interface and use admin as username and password
+6.Ensure that 'weather_data_ingestion_retrieval' python file is located at the DAG portion in the airflow home page
 
 #### Data Storage:<br>
 Set up a PostgreSQL connection in Airflow:<br>
