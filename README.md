@@ -23,6 +23,7 @@ Data Ingestion:<br>
 4.Ensure the container is running in docker, also check all logs to ensure there are no errors<br>
 5.Using http://localhost:8080 , access the airflow web user interface and use admin as username and password
 6.Ensure that 'weather_data_ingestion_retrieval' python file is located at the DAG portion in the airflow home page
+7. Using the code in 'retrieve_data' you can print or view the stored data in postgres
 
 #### Data Storage:<br>
 Set up a PostgreSQL connection in Airflow:<br>
