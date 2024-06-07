@@ -41,9 +41,9 @@ Port: 5432<br>
 1.Monitor the pipeline to ensure its working successfuly. The data generated can be exported for cleaning and furthur analysis<br>
 2.Using data base management tools such as Dbeaver connect to airflow and view the data generated<br>
 using these connection properties:<br>
-Host: localhost (or the IP address of your PostgreSQL server if it is not on the same machine)
-Port: 5432
-Database: airflow (or the name of your PostgreSQL database)
-Username: airflow (or the PostgreSQL username you set)
-Password: airflow (or the PostgreSQL password you set)
+Host: localhost (or the IP address of your PostgreSQL server if it is not on the same machine)<br>
+Port: 5432<br>
+Database: airflow (or the name of your PostgreSQL database)<br>
+Username: airflow (or the PostgreSQL username you set)<br>
+Password: airflow (or the PostgreSQL password you set)<br>
 
