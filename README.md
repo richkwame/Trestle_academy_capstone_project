@@ -38,4 +38,4 @@ Password: airflow<br>
 Port: 5432<br>
 #### Monitoring
 Monitor the pipeline to ensure its working successfuly. The data generated can be exported for cleaning and furthur analysis<br>
-the python code in 'retrieve_data.py can be use to retrieve the stored data
+the python code in 'retrieve_data.py' can be use to retrieve the stored data
