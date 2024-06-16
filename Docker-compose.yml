@@ -1,0 +1,76 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  webserver:
+    image: apache/airflow:2.5.1
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__FERNET_KEY: JaaHoCKFOng4GSsXVO75Fhz0rqtpjzIi8OYTP9BXoR0=
+      AIRFLOW__CORE__SECRET_KEY: cb87ff205927516d66ece37dcf479f428e1651a7a48f9a03edcd2ea66331d7f4
+      AIRFLOW__WEBSERVER__SECRET_KEY: cb87ff205927516d66ece37dcf479f428e1651a7a48f9a03edcd2ea66331d7f4
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__SMTP__SMTP_HOST: 'smtp.gmail.com'
+      AIRFLOW__SMTP__SMTP_STARTTLS: 'True'
+      AIRFLOW__SMTP__SMTP_SSL: 'False'
+      AIRFLOW__SMTP__SMTP_USER: 'rowusu094@gmail.com'
+      AIRFLOW__SMTP__SMTP_PASSWORD: 'pi=3.142'
+      AIRFLOW__SMTP__SMTP_PORT: '587'
+      AIRFLOW__SMTP__SMTP_MAIL_FROM: 'rowusu094@gmail.com'
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    ports:
+      - "8080:8080"
+    command: webserver
+
+  scheduler:
+    image: apache/airflow:2.5.1
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__FERNET_KEY: JaaHoCKFOng4GSsXVO75Fhz0rqtpjzIi8OYTP9BXoR0=
+      AIRFLOW__CORE__SECRET_KEY: cb87ff205927516d66ece37dcf479f428e1651a7a48f9a03edcd2ea66331d7f4
+      AIRFLOW__WEBSERVER__SECRET_KEY: cb87ff205927516d66ece37dcf479f428e1651a7a48f9a03edcd2ea66331d7f4
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    command: scheduler
+
+  init:
+    image: apache/airflow:2.5.1
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__FERNET_KEY: JaaHoCKFOng4GSsXVO75Fhz0rqtpjzIi8OYTP9BXoR0=
+      AIRFLOW__CORE__SECRET_KEY: cb87ff205927516d66ece37dcf479f428e1651a7a48f9a03edcd2ea66331d7f4
+      AIRFLOW__WEBSERVER__SECRET_KEY: cb87ff205927516d66ece37dcf479f428e1651a7a48f9a03edcd2ea66331d7f4
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    command: ["bash", "-c", "airflow db init && airflow users create -u admin -p admin -f Admin -l User -r Admin -e admin@example.com"]
+
+volumes:
+  postgres_data:
