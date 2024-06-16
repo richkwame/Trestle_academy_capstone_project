@@ -23,7 +23,11 @@ Data Ingestion:<br>
 4.Ensure the container is running in docker, also check all logs to ensure there are no errors<br>
 5.Using http://localhost:8080 , access the airflow web user interface and use admin as username and password<br>
 6.Ensure that 'weather_data_ingestion_retrieval' python file is located at the DAG portion in the airflow home page<br>
-7. Using the code in 'retrieve_data' you can print or view the stored data in postgres<br>
+7. Trigger DAG manaually to test the pipeline manaually<br>
+8. The pipeline is scheduled to run automatically every 30 mins<br>
+9. Open dbeaver and establish a connection with airflow and search for real_weather_data form the tables in the top left conner of the database established<br>
+10. Rub a simple query like 'SELECT * FROM real_weather_data' toview the injested data from Openweather with the API<br>
+11. Export the data to csv or excel for furthur cleaning.<br>
 
 #### Data Storage:<br>
 1.Set up a PostgreSQL connection in Airflow:<br>
