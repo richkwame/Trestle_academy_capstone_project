@@ -10,7 +10,7 @@ The goal of this project is to develop a data ingestion pipeline that fetches re
 Data Source:  public weather API (OpenWeatherMap API).<br>
 Tools and Technologies: Python, Airflow, PostgreSQL, Docker, Dbeaver, Pandas.<br>
 Objectives:
-Fetch real-time weather data at regular intervals.
+Fetch real-time weather data such as temperature, description(eg,broken cloud, raining, cloudy etc),Humidity, and timestamp every 30 minutes.
 Store the data in a PostgreSQL database.
 Set up a monitoring and error handling system with email notification to ensure data quality and pipeline reliability.
 
