@@ -4,7 +4,7 @@
 "Real-Time Weather Data Ingestion and Processing Pipeline"
 
 ### Project Overview:
-The goal of this project is to develop a data ingestion pipeline that fetches real-time weather data from kumasi using a public API, and stores it in a database for further analysis and visualization.
+The goal of this project is to develop a data ingestion pipeline that fetches real-time weather data from ten(10) major cities ('Kumasi', 'Accra', 'Takoradi', 'Cape Coast', 'Tema', 'Obuasi', 'Sunyani', 'Konongo', 'Koforidua', 'Techiman') in Ghana, creates table for each city using a public API, and stores it in a database for further analysis and visualization.
 
 ### Scope and Objectives:
 Data Source:  public weather API (OpenWeatherMap API).<br>
